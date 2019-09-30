@@ -1,6 +1,6 @@
 OSXUniversal
 PlayerPath?
-/Users/abigailchen/bingo2.0/bingo2.0-initial.app
+/Users/sophie/coding/cs98/hack-a-thing-2-hackathing2-achen-sdebs/bingo2.0/build2.app
 SceneListBegin?
 Assets/Scenes/BrilliantBingoScene.unity
 SceneListEnd?
@@ -20,7 +20,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.P
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 1be3e7be14f9e233eea4753ecf9c8f56 Assembly-CSharp.dll:BrilliantBingo.Code.Infrastructure.Layout.CardsLayoutManager
 e7a73f5f78ba6445195ec23b74a1ce2d Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventHandler
-60add4a306a3ae4afd65b2f01732c428 Assembly-CSharp.dll:BrilliantBingo.Code.Infrastructure.Views.BingoCardView
+847481565bd97369d341ba3d4d893527 Assembly-CSharp.dll:BrilliantBingo.Code.Infrastructure.Views.BingoCardView
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:BrilliantBingo.Code.Infrastructure.Views.ReadySteadyGoView
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
