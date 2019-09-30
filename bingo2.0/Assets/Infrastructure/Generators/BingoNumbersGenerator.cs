@@ -66,6 +66,7 @@ namespace BrilliantBingo.Code.Infrastructure.Generators
             var numbersList = _bingoNumberListsArray[letterIndex];
 
             var randomIndexForPickNumber = Random.Range(0, numbersList.Count);
+            //var randomIndexForPickNumber = Random.Range(0, 25);
 
             // Pick number by random index in numbersList
             var randomNumber = numbersList[randomIndexForPickNumber];
@@ -73,6 +74,8 @@ namespace BrilliantBingo.Code.Infrastructure.Generators
             // Remove picked number from list (we don't want generate this number again in further calls
             // to GenerateUniqueNumberForLetter() method)
             numbersList.RemoveAt(randomIndexForPickNumber);
+
+            randomNumber = Random.Range(0, 25);
 
             return randomNumber;
         }

@@ -32,6 +32,9 @@ namespace BrilliantBingo.Code.Infrastructure.Views
 
         #region Fields
 
+        [SerializeField]
+        private TextAsset _bingoStrings;
+
         private BingoLetter _columnLetter;
 
         private int _verticalIndex;
@@ -71,7 +74,11 @@ namespace BrilliantBingo.Code.Infrastructure.Views
             _highlightedTextColor = Color.white;
             _normalColor = GetButton().colors.normalColor;
             GetButton().onClick.AddListener(Clicked);
-            GetText().text = _number.ToString(CultureInfo.InvariantCulture);
+            
+            string[] bingoStrings = _bingoStrings.ToString().Split('\n');
+            GetText().text = bingoStrings[_number];
+            
+            //GetText().text = _number.ToString(CultureInfo.InvariantCulture);
 
             _initialized = true;
         }
