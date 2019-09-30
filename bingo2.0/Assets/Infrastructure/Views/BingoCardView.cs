@@ -26,6 +26,9 @@ namespace BrilliantBingo.Code.Infrastructure.Views
         private Button _bingoButton;
 
         [SerializeField]
+        private Button _resetButton;
+
+        [SerializeField]
         private AudioSource _badBingoAudioSource;
 
         [SerializeField]
@@ -149,6 +152,7 @@ namespace BrilliantBingo.Code.Infrastructure.Views
             _badBingoPanel.SetActive(false);
 
             _bingoButton.onClick.AddListener(OnBingoButtonPressed);
+            _resetButton.onClick.AddListener(OnResetButtonPressed);
 
             _markedNumbersMap = new [,]
             {
@@ -209,6 +213,21 @@ namespace BrilliantBingo.Code.Infrastructure.Views
             }
         }
 
+        private void ResetCardNumbersMap()
+        {
+            for (var rowIndex = 0; rowIndex < RowsCount; rowIndex++)
+            {
+                for (var columnIndex = 0; columnIndex < ColumnsCount; columnIndex++)
+                {
+                    var cardNumberView = _cardNumberViewsMap[rowIndex, columnIndex];
+
+                    cardNumberView.Unmark();
+
+                    _markedNumbersMap[rowIndex, columnIndex] = UnmarkedNumber;
+                }
+            }
+        }
+
         private void OnNumberMarked(object sender, CardNumberMarkedEventArgs e)
         {
             var rowIndex = e.NumberVerticalIndex;
@@ -238,7 +257,6 @@ namespace BrilliantBingo.Code.Infrastructure.Views
         private void OnBingoButtonPressed()
         {
             Finished = true;
-            DisableCard();
             var bingo = CheckForBingo();
             IsWinBingo = bingo;
             if (bingo)
@@ -255,6 +273,15 @@ namespace BrilliantBingo.Code.Infrastructure.Views
             }
         }
 
+        private void OnResetButtonPressed()
+        {
+            PlayBadBingoSound();
+            Finished = false;
+            EnableCard();
+            TurnToCardInUseView();
+            ResetCardNumbersMap();
+        }
+
         private void PlayBadBingoSound()
         {
             _badBingoAudioSource.Play();
@@ -263,6 +290,13 @@ namespace BrilliantBingo.Code.Infrastructure.Views
         private void PlayWinBingoSound()
         {
             _winBingoAudioSource.Play();
+        }
+
+        private void TurnToCardInUseView()
+        {
+            _numbersPanel.SetActive(true);
+            _winBingoPanel.SetActive(false);
+            _badBingoPanel.SetActive(false);
         }
 
         private void TurnToCardBadBingoView()
@@ -482,12 +516,14 @@ namespace BrilliantBingo.Code.Infrastructure.Views
         public void EnableCard()
         {
             _bingoButton.interactable = true;
+            _resetButton.interactable = true;
             EnableCardNumbersInput();
         }
 
         public void DisableCard()
         {
             _bingoButton.interactable = false;
+            _resetButton.interactable = false;
             DisableCardNumbersInput();
         }
 

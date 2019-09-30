@@ -99,7 +99,7 @@ namespace BrilliantBingo.Code.Infrastructure.Views
             OnMarked();
         }
 
-        private void Unmark()
+        public void Unmark()
         {
             var c = _button.colors;
             c.normalColor = _normalColor;
