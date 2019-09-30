@@ -5,9 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/BrilliantBingoStartScene.unity
   - enabled: 1
-    path: Assets/Scenes/MainMenuScene.unity
-    guid: 1e67ebd5aaad1e14b887e69100609c37
-  - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: 2498f2e7fd75b7344952cb6ca2134399
+    path: Assets/Scenes/BrilliantBingoScene.unity
