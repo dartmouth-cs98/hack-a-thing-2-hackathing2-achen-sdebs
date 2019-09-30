@@ -12,6 +12,9 @@ namespace BrilliantBingo.Code.Infrastructure.Views
     public class BingoCardView : MonoBehaviour, IBingoCardViewController
     {
         #region Fields
+        
+        [SerializeField]
+        private TextAsset _bingoStrings;
 
         [SerializeField]
         private GameObject _numbersPanel;

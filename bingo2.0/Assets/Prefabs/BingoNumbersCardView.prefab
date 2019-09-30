@@ -5672,6 +5672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81e27110b765884a9e02aaa1b7c437a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bingoStrings: {fileID: 4900000, guid: a81dcb2f286d7428d9cb20eeb3895ba1, type: 3}
   _numbersPanel: {fileID: 176974}
   _badBingoPanel: {fileID: 141338}
   _winBingoPanel: {fileID: 177320}
