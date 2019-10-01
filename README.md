@@ -1,14 +1,14 @@
 # Unity Meme Bingo
 -Abby Chen & Sophie Debs for CS98 hack-a-thing-2
 
-![](example-cards.png)
+![](img/example-cards.png)
 
 
 ### What we did
 
 We created randomly generated bingo cards in Unity. Instead of the typical B-12, I-25 fare the player can create meme bingo cards (which are memes in themselves - memeception!) A glance at the many varieties on meme bingo online:
 
-![](meme-bingo-examples.png)
+![](img/meme-bingo-examples.png)
 
 Our pictured example is YA novel tropes bingo.
 
