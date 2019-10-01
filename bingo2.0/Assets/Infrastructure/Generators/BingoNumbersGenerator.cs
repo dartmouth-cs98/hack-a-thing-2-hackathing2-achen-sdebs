@@ -21,6 +21,8 @@ namespace BrilliantBingo.Code.Infrastructure.Generators
 
         private readonly IList<int>[] _bingoNumberListsArray;
 
+        public int[] indexValues;
+
         #endregion
 
         #region Constructors
@@ -34,6 +36,12 @@ namespace BrilliantBingo.Code.Infrastructure.Generators
             _oList = GenerateNumbersForRange(BingoNumbersRanges.FromO, BingoNumbersRanges.ToO);
 
             _bingoNumberListsArray = new[] { _bList, _iList, _nList, _gList, _oList };
+
+            indexValues = new int[25];
+                foreach(int i in indexValues) {
+                indexValues[i] = i;
+            }
+
         }
 
         #endregion
@@ -66,16 +74,28 @@ namespace BrilliantBingo.Code.Infrastructure.Generators
             var numbersList = _bingoNumberListsArray[letterIndex];
 
             var randomIndexForPickNumber = Random.Range(0, numbersList.Count);
-            //var randomIndexForPickNumber = Random.Range(0, 25);
 
             // Pick number by random index in numbersList
             var randomNumber = numbersList[randomIndexForPickNumber];
+
+            
+            while(true) {
+                randomNumber = Random.Range(0, 25);
+                if (indexValues[randomNumber] != -1) {
+                    indexValues[randomNumber] = -1;
+                    break;
+                }
+                else {
+                    continue;
+                }
+            }
+            
             
             // Remove picked number from list (we don't want generate this number again in further calls
             // to GenerateUniqueNumberForLetter() method)
-            numbersList.RemoveAt(randomIndexForPickNumber);
+            //indexValues.RemoveAt(randomIndexForPickNumber);
 
-            randomNumber = Random.Range(0, 25);
+            //randomNumber = Random.Range(0, 25);
 
             return randomNumber;
         }
